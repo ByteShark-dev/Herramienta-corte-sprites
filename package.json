@@ -17,7 +17,7 @@
     "preview": "vite preview",
     "test": "vitest run",
     "desktop": "npm run build && electron .",
-    "dist:win": "npm run build && electron-builder --win portable"
+    "dist:win": "npm run build && electron-builder --win nsis portable"
   },
   "dependencies": {
     "jszip": "^3.10.1",
@@ -44,6 +44,7 @@
   "build": {
     "appId": "com.byteshark.spritecutter",
     "productName": "Sprite Sheet Cutter",
+    "icon": "build/icon.png",
     "directories": {
       "output": "release"
     },
@@ -55,13 +56,27 @@
     "win": {
       "target": [
         {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
           "target": "portable",
           "arch": [
             "x64"
           ]
         }
       ],
-      "artifactName": "SpriteSheetCutter-${version}-win-${arch}.${ext}"
+      "artifactName": "SpriteSheetCutter-${version}-win-${arch}.${ext}",
+      "icon": "build/icon.ico"
+    },
+    "nsis": {
+      "artifactName": "SpriteSheetCutter-Setup-${version}-win-${arch}.${ext}",
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "shortcutName": "Sprite Sheet Cutter"
     }
   }
 }

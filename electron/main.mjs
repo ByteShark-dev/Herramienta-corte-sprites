@@ -13,6 +13,7 @@ const createWindow = async () => {
     minHeight: 760,
     autoHideMenuBar: true,
     backgroundColor: '#080b12',
+    icon: path.join(__dirname, '..', 'build', 'icon.png'),
     title: 'Sprite Sheet Cutter',
     webPreferences: {
       preload: path.join(__dirname, 'preload.mjs'),

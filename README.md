@@ -35,7 +35,13 @@ El ejecutable queda en:
 release/SpriteSheetCutter-0.1.0-win-x64.exe
 ```
 
-Es un ejecutable portable, así que puedes abrirlo directamente sin servidor ni backend.
+Ese archivo es el ejecutable portable. Tambien se genera el instalador:
+
+```text
+release/SpriteSheetCutter-Setup-0.1.0-win-x64.exe
+```
+
+Ambos funcionan sin servidor ni backend.
 
 ## Scripts útiles
 
